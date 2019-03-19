@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>
+      Products
+      <button mat-raised-button color="primary" (click)="addProduct()" class="add-product-btn">
+      <mat-icon>add</mat-icon> Add Product
+    </button>
+    </h1>
+    <hr>
+  <div *ngIf="products">
+    <app-data-table *ngIf="products.length > 0" [data]="products" [options]="options"></app-data-table>
+    <div *ngIf="products.length === 0">
+      No data found
+    </div>
+  </div>
+  <app-loading *ngIf="!products"></app-loading>
+</div>

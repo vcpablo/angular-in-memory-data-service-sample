@@ -1,0 +1,25 @@
+.container  {
+  padding: 30px 100px;
+  margin: 0 auto;
+
+  .mat-card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+.container > * {
+  width: 100%;
+}
+
+.buttons-wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  button, a {
+    min-width: 300px;
+    margin-right: 8px;
+  }
+}

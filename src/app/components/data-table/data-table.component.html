@@ -1,0 +1,30 @@
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Type to search...">
+</mat-form-field>
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  <div *ngFor="let column of options.columns">
+    <ng-container  [matColumnDef]="column.field">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ column.title }} </th>
+      <td mat-cell *matCellDef="let element"> 
+        <span *ngIf="column.field !== 'options'">
+          <span *ngIf="column.format === 'currency'">
+            {{ element[column.field] | currency:'€' }}
+          </span>
+          <span *ngIf="!column.format">
+            {{ element[column.field] }}
+          </span>
+        </span>
+        <span *ngIf="column.field === 'options'" class="buttons-wrapper">
+          <button mat-raised-button (click)="edit(element)">
+            <mat-icon>edit</mat-icon> Edit
+          </button>
+          <button mat-raised-button color="warn" (click)="remove(element)">
+            <mat-icon>close</mat-icon> Remove
+          </button>
+        </span>
+      </td>
+    </ng-container>
+  </div>
+  <tr mat-header-row *matHeaderRowDef="columns"></tr>
+  <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+</table>

@@ -1,0 +1,38 @@
+<div class="container">
+  <h1>Product Form</h1>
+  <hr>
+  <mat-card  [formGroup]="model">
+  <input type="hidden" formControlName="id" />
+  <mat-form-field>
+    <input matInput placeholder="Enter product code" formControlName="code" required>
+    <mat-error *ngIf="model.controls.code.invalid">{{ getErrorMessage('code') }}</mat-error>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input matInput placeholder="Enter product name" formControlName="name" required>
+    <mat-error *ngIf="model.controls.name.invalid">{{ getErrorMessage('name') }}</mat-error>
+  </mat-form-field>
+  
+  
+  <mat-form-field>
+    <input matInput type="number" placeholder="Enter product price" formControlName="price" required>
+    <mat-error *ngIf="model.controls.price.invalid">{{ getErrorMessage('price') }}</mat-error>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input matInput type="number" placeholder="Enter product quantity" formControlName="quantity" required>
+    <mat-error *ngIf="model.controls.quantity.invalid">{{ getErrorMessage('quantity') }}</mat-error>
+  </mat-form-field>
+  
+  
+  <div class="buttons-wrapper">
+      <button mat-raised-button (click)="back()">
+          <mat-icon>arrow_back</mat-icon> Back
+        </button>
+        <button mat-raised-button color="primary" (click)="save()">
+          <mat-icon>save</mat-icon> Save
+        </button>
+      </div>
+  </mat-card>
+  </div>
+  

@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Confirm exclusion</h1>
+<div mat-dialog-content>
+  <p>Do you really wish to remove: <b>{{ data.name }}?</b></p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="handleCancel()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data.id" cdkFocusInitial>Ok</button>
+</div>

@@ -1,4 +1,5 @@
 # AngularInMemoryDataServiceSample
+Demo: https://angular-in-memory-data-service.firebaseapp.com/products
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
 

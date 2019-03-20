@@ -22,4 +22,11 @@ describe('PageNotFoundComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should show Page not found!', () => {
+    const fixture = TestBed.createComponent(PageNotFoundComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h1').textContent).toContain('Page not found!');
+  });
 });
